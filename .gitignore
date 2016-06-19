@@ -253,3 +253,7 @@ paket-files/
 
 #Don't checking PHP code that I don't own
 **/RedfieldWeather/mldn/*
+
+#Don't checkin js and js.map in the app subfolders (TypeScript)
+**/app/**/*.js
+**/app/**/*.js.map
