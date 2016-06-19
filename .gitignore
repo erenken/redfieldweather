@@ -250,3 +250,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+#Don't checking PHP code that I don't own
+**/RedfieldWeather/mldn/*

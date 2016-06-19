@@ -1,0 +1,12 @@
+﻿<div>
+	<div class="ng-hide" ng-cloak ng-show="indexCtrl.loaded">
+		<current-Conditions></current-Conditions>
+		<div>&nbsp;</div>
+		<current-Alerts></current-Alerts>
+		<!--<div>&nbsp;</div>
+		<temperature-history title="Today's Temperature" days="0"></temperature-history>-->
+	</div>
+	<div class="panel-body row" ng-cloak ng-show="!indexCtrl.loaded">
+		<img class="center-block loading-img" src="/Images/circle-loading-animation.gif" alt="Loading..." />
+	</div>
+</div>
