@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from 'app/service/weather.service';
+import { ITemperatureHistory } from 'app/service/ITemperatureHistory';
 
 @Component({
   selector: 'rw-temperature-history',
@@ -7,24 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TemperatureHistoryComponent implements OnInit {
+    loaded = false;
     chartTitle = 'Temperature';
     type = 'Line';
-    data = [
-       ['Firefox', 45.0],
-       ['IE', 26.8],
-       ['Chrome', 12.8],
-       ['Safari', 8.5],
-       ['Opera', 6.2],
-       ['Others', 0.7]
-    ];
+    data: ITemperatureHistory[] = [];
     columnNames = ['Time', 'Temperature'];
     options = { legend: { position: 'bottom' } };
     width = 800;
     height = 400;
 
-  constructor() { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
+      this.getTemperatureHistory();
   }
 
+  getTemperatureHistory() {
+      this.data = this.weatherService.getTemperatureHistory();
+      this.loaded = true;
+  }
 }
